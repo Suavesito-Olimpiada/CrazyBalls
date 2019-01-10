@@ -24,12 +24,13 @@
 int main(int argc, char const * argv [])
 {
     bool gstt = false;
-    char dir='\0';
+    char dir[4]="\0\0\0", *aux;
     int x=0, y=0;
     int max_x=40, max_y=40;
     int _xmax=0, _ymax=0;
     int turn=0;
     unsigned speed=10;
+    int a=0, b=0;
 
     initscr ();
     noecho ();
@@ -38,35 +39,64 @@ int main(int argc, char const * argv [])
 
     init_game (max_y, max_x);
 
-    while (true && dir != 'q' && !gstt) {
+    while (true && dir[0] != 'q' && !gstt) {
         x = stdgame.ply.x;
         y = stdgame.ply.y;
 
-        if (getchnb (&dir) > 0) {
-            switch (dir) {
-                case 'w':
-                    y+=max_y-1;
-                    break;
-                case 's':
-                    ++y;
-                    break;
-                case 'd':
-                    x+=1;
-                    break;
-                case 'a':
-                    x+=max_x-1;
-                    break;
-                case '-':
-                    ++speed;
-                    break;
-                case '+':
-                    if (speed>1) --speed;
-                    break;
-                case 'n':
-                    if (stdgame.level < 10) next_level ();
-                    break;
-                default:
-                    break;
+        a = getchnb (dir);
+        if (a > 0) {
+            if (a == 1) {
+                switch (dir[0]) {
+                    case 'w':
+                        y+=max_y-1;
+                        break;
+                    case 's':
+                        ++y;
+                        break;
+                    case 'd':
+                        x+=1;
+                        break;
+                    case 'a':
+                        x+=max_x-1;
+                        break;
+                    case '-':
+                        ++speed;
+                        break;
+                    case '+':
+                        if (speed>1) --speed;
+                        break;
+                    case 'n':
+                        if (stdgame.level < 10) next_level ();
+                        break;
+                    default:
+                        break;
+                }
+            }
+            if (a > 1) {
+                aux = (char*)(&b);
+                int i = 0;
+                for (i=0; i<a; ++i)
+                    aux [i] = dir [i];
+                for (i=a; i<4; ++i)
+                    aux [i] = 0;
+            }
+            if (a == 3) {
+                switch (b) {
+                    case 4283163:   // up
+                        y+=max_y-1;
+                        break;
+                    case 4348699:   // down
+                        ++y;
+                        break;
+                    case 4414235:   // right
+                        x+=1;
+                        break;
+                    case 4479771:   // left
+                        x+=max_x-1;
+                        break;
+                    default:
+                        break;
+                }
             }
             x = x%max_x; // Advance the ball to the right
             y = y%max_y; // Advance the ball to the right
@@ -84,7 +114,7 @@ int main(int argc, char const * argv [])
         print_screen (stdgame.scr);
         gstt = collision_check ();
 
-        mvprintw (0, 0, "%u", speed);
+        mvprintw (0, 0, "SP:%u\tLV:%d\tKY:%d", speed, stdgame.level, b);
         wnoutrefresh (stdscr);
         doupdate ();
 

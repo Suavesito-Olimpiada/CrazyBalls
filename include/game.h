@@ -15,7 +15,7 @@ typedef struct GAME {
 
 game stdgame;
 
-const int level_settings [] = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};
+const int level_settings [] = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55};
 
 void clear_screen (screen s) {
     int i=0, j=0;
@@ -55,7 +55,7 @@ void init_level () {
             continue;
         }
     }
-    clear_screen ()
+    clear_screen (stdgame.scr);
     update_screen_player (stdgame.scr, stdgame.ply);
     update_screen_particles (stdgame.scr, stdgame.pls, level_settings [stdgame.level]);
 }

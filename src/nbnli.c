@@ -7,7 +7,7 @@ int getchnb (char *ch){
     newattr = oldattr;
     newattr.c_lflag &= ~( ICANON | ECHO );
     tcsetattr( STDIN_FILENO, TCSANOW, &newattr );
-    int st = read (STDIN_FILENO, ch, 1);
+    int st = read (STDIN_FILENO, ch, 4);
     fcntl (STDIN_FILENO, F_SETFL, fcntl (0, F_GETFL) | ~O_NONBLOCK);
     tcsetattr( STDIN_FILENO, TCSANOW, &oldattr );
     return st;
