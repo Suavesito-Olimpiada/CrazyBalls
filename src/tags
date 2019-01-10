@@ -1,0 +1,82 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+$(ODIR)/%.o	../src/Makefile	/^$(ODIR)\/%.o: %.c $(DEPS)$/;"	t
+**Compile and run the test cases **	../COMPILE.md	/^#### **Compile and run the test cases **$/;"	t
+**Compile and run with arguments**	../COMPILE.md	/^#### **Compile and run with arguments**$/;"	t
+**Compile and run**	../COMPILE.md	/^#### **Compile and run**$/;"	t
+**Compile**	../COMPILE.md	/^#### **Compile**$/;"	t
+BDIR	../src/Makefile	/^BDIR=..\/build$/;"	m
+CC	../src/Makefile	/^CC=gcc$/;"	m
+CFLAGS	../src/Makefile	/^CFLAGS=-I$(IDIR) -g$/;"	m
+Compile Instructions	../COMPILE.md	/^# Compile Instructions$/;"	c
+Compile Instructions	../README.md	/^#### Compile Instructions$/;"	t
+CrazyBalls Game - Introducción a la Computación	../README.md	/^# CrazyBalls Game - Introducción a la Computación$/;"	c
+DELAY	../src/main.c	/^#define DELAY /;"	d	file:
+DELAY	../src/main_1.c	/^#define DELAY /;"	d	file:
+DEPS	../src/Makefile	/^DEPS = $(patsubst %,$(IDIR)\/%,$(_DEPS))$/;"	m
+GAME	../include/game.h	/^typedef struct GAME {$/;"	s
+IDIR	../src/Makefile	/^IDIR =..\/include$/;"	m
+José Joaquín Zubieta Rico (12-05-2018)	../README.md	/^### José Joaquín Zubieta Rico (12-05-2018)$/;"	S
+LDIR	../src/Makefile	/^LDIR=..\/lib$/;"	m
+LIBS	../src/Makefile	/^LIBS=-lm -lncurses$/;"	m
+MATRIX	../include/matrix.h	/^typedef struct MATRIX {$/;"	s
+OBJ	../src/Makefile	/^OBJ = $(patsubst %,$(ODIR)\/%,$(_OBJ))$/;"	m
+ODIR	../src/Makefile	/^ODIR=..\/build\/obj$/;"	m
+PARTICLE	../include/particle.h	/^typedef struct PARTICLE {$/;"	s
+TDIR	../src/Makefile	/^TDIR=..\/test$/;"	m
+_DEPS	../src/Makefile	/^_DEPS = screen.h matrix.h nbnli.h$/;"	m
+_GAME_H	../include/game.h	/^#define _GAME_H$/;"	d
+_MATRIX_H	../include/matrix.h	/^#define _MATRIX_H$/;"	d
+_NBNLI_H	../include/nbnli.h	/^#define _NBNLI_H$/;"	d
+_OBJ	../src/Makefile	/^_OBJ = main.o matrix.o screen.o nbnli.o$/;"	m
+_PARTICLE_H	../include/particle.h	/^#define _PARTICLE_H$/;"	d
+_SCREEN_H	../include/screen.h	/^#define _SCREEN_H$/;"	d
+_print_screen	../src/screen.c	/^void _print_screen (screen s, int ymax, int xmax) {$/;"	f	typeref:typename:void
+_xmax	../include/screen.h	/^int _ymax=0, _xmax=0;$/;"	v	typeref:typename:int
+_ymax	../include/screen.h	/^int _ymax=0, _xmax=0;$/;"	v	typeref:typename:int
+clean	../src/Makefile	/^clean:$/;"	t
+col	../include/matrix.h	/^    int col;$/;"	m	struct:MATRIX	typeref:typename:int
+collision_check	../include/game.h	/^bool collision_check () {$/;"	f	typeref:typename:bool
+create_matrix	../src/matrix.c	/^void create_matrix (matrix *m, int ren, int col) {$/;"	f	typeref:typename:void
+create_screen	../include/screen.h	/^void (*create_screen) (matrix *m, int ren, int col) = create_matrix;$/;"	v	typeref:typename:void (*)(matrix * m,int ren,int col)
+del_game	../include/game.h	/^void del_game () {$/;"	f	typeref:typename:void
+fprintf_matrix	../src/matrix.c	/^void fprintf_matrix (matrix m, FILE *pf) {$/;"	f	typeref:typename:void
+fprintf_screen	../include/screen.h	/^void (*fprintf_screen) (matrix m, FILE *pf) = fprintf_matrix;$/;"	v	typeref:typename:void (*)(matrix m,FILE * pf)
+free_matrix	../src/matrix.c	/^void free_matrix (matrix *m) {$/;"	f	typeref:typename:void
+free_screen	../include/screen.h	/^void (*free_screen) (matrix *m) = free_matrix;$/;"	v	typeref:typename:void (*)(matrix * m)
+fscanf_matrix	../src/matrix.c	/^void fscanf_matrix (matrix m, FILE *fp) {$/;"	f	typeref:typename:void
+fscanf_screen	../include/screen.h	/^void (*fscanf_screen) (screen m, FILE *pf) = fscanf_matrix;$/;"	v	typeref:typename:void (*)(screen m,FILE * pf)
+game	../include/game.h	/^} game;$/;"	t	typeref:struct:GAME
+getchnb	../src/nbnli.c	/^int getchnb (char *ch){$/;"	f	typeref:typename:int
+init_game	../include/game.h	/^void init_game (int ymax, int xmax) {$/;"	f	typeref:typename:void
+init_level	../include/game.h	/^void init_level () {$/;"	f	typeref:typename:void
+level	../include/game.h	/^    int level;$/;"	m	struct:GAME	typeref:typename:int
+level_settings	../include/game.h	/^const int level_settings [] = {5, 10, 15, 20, 25, 30, 35, 40, 45, 50};$/;"	v	typeref:typename:const int[]
+main	../src/main.c	/^int main(int argc, char const * argv [])$/;"	f	typeref:typename:int
+main	../src/main_1.c	/^int main(int argc, char const * argv [])$/;"	f	typeref:typename:int
+matrix	../include/matrix.h	/^} matrix;$/;"	t	typeref:struct:MATRIX
+next	../include/game.h	/^void next () {$/;"	f	typeref:typename:void
+particle	../include/particle.h	/^} particle;$/;"	t	typeref:struct:PARTICLE
+pls	../include/game.h	/^    particle *pls;$/;"	m	struct:GAME	typeref:typename:particle *
+ply	../include/game.h	/^    particle ply;$/;"	m	struct:GAME	typeref:typename:particle
+print_screen	../include/screen.h	/^#define print_screen /;"	d
+program	../src/Makefile	/^program: $(OBJ)$/;"	t
+ptr	../include/matrix.h	/^    char** ptr;$/;"	m	struct:MATRIX	typeref:typename:char **
+ren	../include/matrix.h	/^    int ren;$/;"	m	struct:MATRIX	typeref:typename:int
+run	../src/Makefile	/^run: .\/program$/;"	t
+scr	../include/game.h	/^    screen scr;$/;"	m	struct:GAME	typeref:typename:screen
+screen	../include/screen.h	/^typedef matrix screen; \/* es mas facil pensar en pantallas que en matrices *\/$/;"	t	typeref:typename:matrix
+stdgame	../include/game.h	/^game stdgame;$/;"	v	typeref:typename:game
+test	../src/Makefile	/^test: .\/program$/;"	t
+update_particle_position	../src/particle.c	/^void update_particle_position (particle *p, int y, int x) {$/;"	f	typeref:typename:void
+update_particle_position_random	../src/particle.c	/^void update_particle_position_random (particle *p, int ymax, int xmax) {$/;"	f	typeref:typename:void
+update_random	../src/particle.c	/^void update_random (particle *ps, int n, int ymax, int xmax) {$/;"	f	typeref:typename:void
+update_screen_particles	../include/game.h	/^void update_screen_particles (screen s, particle *ps, int n) {$/;"	f	typeref:typename:void
+update_screen_player	../include/game.h	/^int update_screen_player (screen s, player ply) {$/;"	f	typeref:typename:int
+x	../include/particle.h	/^    int x, y;$/;"	m	struct:PARTICLE	typeref:typename:int
+y	../include/particle.h	/^    int x, y;$/;"	m	struct:PARTICLE	typeref:typename:int

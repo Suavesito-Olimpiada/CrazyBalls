@@ -1,6 +1,8 @@
 #ifndef _PARTICLE_H
 #define _PARTICLE_H
 
+#include <stdlib.h>
+
 typedef struct PARTICLE {
     int x, y;
 } particle;

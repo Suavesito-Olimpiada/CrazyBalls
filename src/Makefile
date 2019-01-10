@@ -9,10 +9,10 @@ BDIR=../build
 
 LIBS=-lm -lncurses
 
-_DEPS = screen.h matrix.h nbnli.h
+_DEPS = screen.h nbnli.h game.h particle.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o matrix.o screen.o nbnli.o
+_OBJ = main.o screen.o nbnli.o particle.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 $(ODIR)/%.o: %.c $(DEPS)
